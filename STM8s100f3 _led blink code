@@ -1,0 +1,17 @@
+#include "stm8s.h"
+
+main()
+{
+    // setup()
+    GPIO_Init(GPIOB, GPIO_PIN_5, GPIO_MODE_OUT_PP_LOW_SLOW);
+    // loop()
+    while (1)
+    {
+        unsigned long i; // variable used by delay
+        GPIO_WriteHigh(GPIOB, GPIO_PIN_5);
+        for(i=0; i<10000; i++); // some delay
+        GPIO_WriteLow(GPIOB, GPIO_PIN_5);
+        for(i=0; i<10000; i++); // some delay
+				
+    }
+}
